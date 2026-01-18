@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login | Portal do Aluno</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<link rel="icon" type="image/png" href="../Site IMF/Imagens IMF/circle-cropped.png">
+
+<style>
+
+:root{
+  --roxo:#a241cc;
+  --roxo-escuro:#6c1394;
+  --roxo-neon:#c77bff;
+  --branco:#ffffff;
+}
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+/* FUNDO BRANCO COM DETALHES ROXOS */
+body{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#ffffff;
+  color:#333;
+}
+
+/* CAMADAS ROXAS DECORATIVAS */
+.shape{
+  position:fixed;
+  z-index:-5;
+  filter:blur(35px);
+  opacity:.55;
+}
+
+.s1{
+  width:420px;height:420px;
+  background:#c77bff;
+  top:-120px; left:-60px;
+  border-radius:50%;
+}
+
+.s2{
+  width:380px;height:380px;
+  background:#a241cc;
+  bottom:-110px; right:-80px;
+  border-radius:50%;
+}
+
+.s3{
+  position:fixed;
+  width:100%;
+  height:180px;
+  top:0;
+  left:0;
+  background:linear-gradient(135deg,#f5e3ff,#ffffff);
+  border-bottom-left-radius:50%;
+  border-bottom-right-radius:50%;
+}
+
+/* CONTAINER LOGIN */
+.login-box{
+  width:95%;
+  max-width:420px;
+  padding:40px 35px;
+  border-radius:22px;
+  background:#ffffff;
+  border:1.8px solid rgba(162,65,204,.25);
+  box-shadow:0 15px 40px rgba(0,0,0,.08);
+  animation:nascer .5s ease forwards;
+}
+
+@keyframes nascer{
+  from{ transform:translateY(40px); opacity:0;}
+  to{ transform:translateY(0); opacity:1;}
+}
+
+/* CABEÇALHO */
+.logo{
+  text-align:center;
+  font-size:2.5rem;
+  font-weight:900;
+  letter-spacing:1px;
+  color:#6c1394;
+}
+
+.sub{
+  text-align:center;
+  font-size:.95rem;
+  margin-top:6px;
+  color:#555;
+}
+
+/* DIVISOR */
+.linha{
+  width:80%;
+  height:2px;
+  background:linear-gradient(90deg, transparent, #a241cc, transparent);
+  margin:22px auto 28px auto;
+  border-radius:10px;
+}
+
+/* INPUTS */
+input{
+  width:100%;
+  padding:14px 15px;
+  background:#ffffff;
+  border:1.6px solid #caa8ff;
+  color:#333;
+  border-radius:12px;
+  margin-bottom:16px;
+  outline:none;
+  transition:.25s;
+}
+
+input::placeholder{ color:#777; }
+
+input:focus{
+  border-color:#6c1394;
+  box-shadow:0 0 10px rgba(150,0,255,.25);
+}
+
+/* BOTÃO LOGIN */
+button{
+  width:100%;
+  padding:13px;
+  border-radius:999px;
+  border:none;
+  cursor:pointer;
+  background:linear-gradient(135deg,#b163ff, #6c1394);
+  color:white;
+  font-size:1rem;
+  font-weight:700;
+  letter-spacing:.5px;
+  box-shadow:0 10px 24px rgba(0,0,0,.25);
+  transition:.2s;
+}
+
+button:hover{
+  transform:translateY(-2px) scale(1.01);
+  box-shadow:0 16px 38px rgba(0,0,0,.35);
+}
+
+/* LINKS */
+.opcoes{
+  text-align:center;
+  margin-top:18px;
+}
+
+.opcoes button{
+  margin-top:8px;
+  width:auto;
+  padding:0;
+  border:none;
+  background:none;
+  color:#6c1394;
+  font-size:.9rem;
+  cursor:pointer;
+}
+
+.opcoes button:hover{
+  text-decoration:underline;
+}
+
+.forgot{
+  display:block;
+  margin-top:10px;
+  font-size:.85rem;
+  color:#444;
+  cursor:pointer;
+}
+
+.forgot:hover{
+  color:#6c1394;
+  text-decoration:underline;
+}
+
+/* RESPONSIVO */
+@media(max-width:450px){
+  .login-box{
+    padding:30px 22px;
+  }
+  .logo{
+    font-size:2.1rem;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="s1 shape"></div>
+<div class="s2 shape"></div>
+<div class="s3"></div>
+
+<div class="login-box">
+
+  <div class="logo"> <img src="../Site IMF/Imagens IMF/círculo branco.png" style="height: 80px; width: 80px;" alt="logotipo"> </div>
+  <p class="sub">Portal do Aluno — Acesse sua conta</p>
+
+  <div class="linha"></div>
+
+  <form id="loginForm">
+    <input type="email" id="email" placeholder="Digite seu e-mail" required>
+    <input type="password" id="password" placeholder="Digite sua senha" required>
+    <button type="submit">Entrar</button>
+  </form>
+
+  <div class="opcoes">
+    <button onclick="window.location.href='cadastro.html'">
+      Criar conta
+    </button>
+
+    <span class="forgot" onclick="window.location.href='senha.html'">
+      Esqueci minha senha
+    </span>
+  </div>
+
+</div>
+
+<script>
+const form = document.getElementById("loginForm");
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  window.location.href = "conta-candidato.html";
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal do Candidato - OMF</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Roboto', sans-serif;
+}
+
+body{
+  background:#f7f9fc;
+  min-height:100vh;
+  color:#333;
+  display:flex;
+}
+
+/* BOTÃO MENU (HAMBÚRGUER) */
+.menu-btn{
+  position:fixed;
+  top:18px;
+  left:18px;
+  background:#a241cc;
+  color:white;
+  border:none;
+  padding:10px 14px;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
+  z-index:999;
+  transition:opacity 0.3s, transform 0.3s;
+}
+
+/* BOTÃO FECHAR */
+.close-btn{
+  background:none;
+  border:none;
+  font-size:20px;
+  cursor:pointer;
+  align-self:flex-end;
+  color:#6a1a9a;
+}
+
+/* SIDEBAR */
+.sidebar{
+  width:270px;
+  background:white;
+  border-right:1px solid #ddd;
+  padding:20px 18px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  position:fixed;
+  top:0;
+  left:0;
+  height:100vh;
+
+  /* animação */
+  transform:translateX(-110%);
+  opacity:0;
+  transition:transform 0.35s ease, opacity 0.35s ease;
+  z-index:900;
+}
+
+.sidebar.show{
+  transform:translateX(0);
+  opacity:1;
+}
+
+.logo h1{
+  font-size:17px;
+  color:#a241cc;
+  font-weight:900;
+}
+
+.menu{
+  margin-top:10px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.menu a{
+  text-decoration:none;
+  color:#333;
+  padding:12px;
+  border-radius:10px;
+  font-size:0.95rem;
+  transition:0.3s;
+}
+
+.menu a:hover,
+.menu a.active{
+  background:#f2d9ff;
+  color:#6a1a9a;
+  font-weight:700;
+}
+
+.logout{
+  margin-top:auto;
+  background:#f2e4ff;
+  padding:10px;
+  border-radius:10px;
+  text-align:center;
+  cursor:pointer;
+  color:#6a1a9a;
+  font-weight:600;
+  transition:0.3s;
+}
+.logout:hover{
+  background:#a241cc;
+  color:white;
+}
+
+/* CONTEÚDO */
+.content{
+  flex:1;
+  padding:25px;
+  width:100%;
+  margin-left:0;
+}
+
+header{
+  background:white;
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 3px 10px rgba(0,0,0,0.1);
+  margin-top:55px;
+  margin-bottom:20px;
+}
+
+header h2{
+  color:#6a1a9a;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:white;
+  padding:18px;
+  border-radius:16px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+}
+
+.card h3{
+  color:#6a1a9a;
+  margin-bottom:10px;
+}
+
+.card ul{
+  list-style:none;
+}
+
+.card ul li{
+  margin-bottom:8px;
+  font-size:0.95rem;
+}
+
+.card a{
+  color:#a241cc;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.card a:hover{
+  text-decoration:underline;
+}
+</style>
+</head>
+
+<body>
+
+<!-- BOTÃO MENU -->
+<button class="menu-btn" id="menuBtn" onclick="openMenu()">☰ Menu</button>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+
+  <button class="close-btn" onclick="closeMenu()">✕</button>
+
+  <div class="logo">
+    <h1>OMF - Portal do Candidato</h1>
+  </div>
+
+  <div class="menu">
+    <a class="active">Painel</a>
+    <a href="aulas.html">Aulas</a>
+    <a href="materiais.html">Materiais de Estudo</a>
+    <a href="cronogama.html">Cronograma</a>
+    <a href="resultados.html">Resultados</a>
+    <a href="provas.html">Provas</a>
+    <a href="certificados.html">Certificados</a>
+  </div>
+
+  <div class="logout"><a href="index.html" style="text-decoration: none;">Sair</a></div>
+</div>
+
+<!-- CONTEÚDO -->
+<div class="content">
+
+<header>
+  <h2>Bem-vindo ao Portal do Candidato OMF</h2>
+  <p>Acompanhe aqui suas informações, materiais e resultados.</p>
+</header>
+
+<div class="grid">
+
+  <div class="card">
+    <h3>Inscrições</h3>
+    <ul>
+      <li><a href="forms.html">Formulário de Inscrição</a></li>
+      <li><a href="#">Status da Inscrição</a> (em breve)</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Cronograma</h3>
+    <ul>
+      <li>01/06 - Início das inscrições</li>
+      <li>03/08 - Primeira Fase</li>
+      <li>17/08 - Segunda Fase</li>
+      <li>24/08 - Resultado Final</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Materiais</h3>
+    <ul>
+      <li><a href="#">Guia de Estudos</a></li>
+      <li><a href="#">Simulados</a></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Resultados & Gabaritos</h3>
+    <ul>
+      <li>Primeira Fase (em breve)</li>
+      <li>Segunda Fase (em breve)</li>
+    </ul>
+  </div>
+
+</div>
+</div>
+
+<script>
+function openMenu(){
+  document.getElementById("sidebar").classList.add("show");
+  document.getElementById("menuBtn").style.opacity = "0";
+  document.getElementById("menuBtn").style.pointerEvents = "none";
+}
+
+function closeMenu(){
+  document.getElementById("sidebar").classList.remove("show");
+  document.getElementById("menuBtn").style.opacity = "1";
+  document.getElementById("menuBtn").style.pointerEvents = "auto";
+}
+</script>
+
+</body>
+</html>

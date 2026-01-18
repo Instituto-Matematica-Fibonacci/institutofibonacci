@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Criar Conta | Portal do Aluno</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --roxo:#a241cc;
+  --roxo-escuro:#6c1394;
+  --roxo-claro:#caa8ff;
+}
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+/* FUNDO */
+body{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  padding:40px 0;
+}
+
+/* FORMAS */
+.shape{
+  position:fixed;
+  z-index:-1;
+  opacity:.15;
+}
+.s1{
+  width:360px;height:360px;
+  background:var(--roxo-claro);
+  border-radius:50%;
+  top:-120px; left:-80px;
+}
+.s2{
+  width:320px;height:320px;
+  background:var(--roxo);
+  border-radius:50%;
+  bottom:-120px; right:-80px;
+}
+
+/* CARD */
+.cadastro-box{
+  width:95%;
+  max-width:900px;
+  background:#fff;
+  border-radius:24px;
+  display:flex;
+  flex-wrap:wrap;
+  overflow:hidden;
+  box-shadow:0 18px 45px rgba(0,0,0,.15);
+  border:1.5px solid rgba(162,65,204,.25);
+}
+
+/* IMAGEM */
+.cadastro-imagem{
+  flex:1 1 40%;
+  position:relative;
+}
+
+.cadastro-imagem img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.cadastro-imagem::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,.15),
+    rgba(0,0,0,.35)
+  );
+}
+
+/* FORM */
+.cadastro-form{
+  flex:1 1 60%;
+  padding:38px 36px;
+}
+
+/* CABEÇALHO */
+.logo{
+  text-align:center;
+}
+
+.logo h2{
+  color:var(--roxo-escuro);
+  font-weight:800;
+}
+
+.sub{
+  text-align:center;
+  font-size:.95rem;
+  margin-top:6px;
+  color:#555;
+}
+
+/* DIVISOR */
+.linha{
+  width:80%;
+  height:2px;
+  background:linear-gradient(90deg, transparent, var(--roxo), transparent);
+  margin:22px auto 28px auto;
+}
+
+/* CAMPOS */
+.field{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:14px;
+}
+
+.field label{
+  font-size:.9rem;
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+.input-wrapper{
+  position:relative;
+}
+
+input{
+  padding:14px 15px;
+  border:1.6px solid var(--roxo-claro);
+  border-radius:12px;
+  outline:none;
+  transition:.25s;
+}
+
+input:focus{
+  border-color:var(--roxo-escuro);
+  box-shadow:0 0 10px rgba(150,0,255,.25);
+}
+
+/* OLHO */
+.eye{
+  position:absolute;
+  right:12px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  opacity:.6;
+}
+
+.eye:hover{ opacity:1; }
+
+/* ERRO */
+.erro{
+  display:none;
+  color:crimson;
+  font-size:.85rem;
+  margin-bottom:10px;
+}
+
+/* TERMOS */
+.termos{
+  font-size:.85rem;
+  display:flex;
+  align-items:flex-start;
+  margin-top:10px;
+}
+
+.termos input{
+  margin-right:8px;
+  margin-top:4px;
+}
+
+/* BOTÃO */
+button{
+  width:100%;
+  padding:13px;
+  border-radius:999px;
+  border:none;
+  background:linear-gradient(135deg,#b163ff, var(--roxo-escuro));
+  color:#fff;
+  font-size:1rem;
+  font-weight:700;
+  margin-top:16px;
+  cursor:pointer;
+}
+
+/* LINKS */
+.opcoes{
+  text-align:center;
+  margin-top:18px;
+}
+
+.opcoes a{
+  color:var(--roxo-escuro);
+  font-weight:600;
+  text-decoration:none;
+}
+
+/* RESPONSIVO */
+@media (max-width:700px){
+  .cadastro-box{
+    flex-direction:column;
+  }
+
+  .cadastro-imagem{
+    height:180px;
+    width:100%;
+  }
+
+  .cadastro-form{
+    padding:26px 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="shape s1"></div>
+<div class="shape s2"></div>
+
+<div class="cadastro-box">
+
+  <!-- IMAGEM DO ALUNO -->
+  <div class="cadastro-imagem">
+    <img 
+      src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"
+      alt="Aluno estudando"
+      loading="lazy"
+    >
+  </div>
+
+  <!-- FORMULÁRIO -->
+  <div class="cadastro-form">
+
+    <div class="logo">
+      <h2>Cadastro de Aluno</h2>
+    </div>
+
+    <p class="sub">Crie sua conta no Portal do Aluno</p>
+
+    <div class="linha"></div>
+
+    <form id="cadastroForm">
+
+      <div class="field">
+        <label>Nome completo</label>
+        <input type="text" required>
+      </div>
+
+      <div class="field">
+        <label>E-mail</label>
+        <input type="email" required>
+      </div>
+
+      <div class="field">
+        <label>Senha</label>
+        <div class="input-wrapper">
+          <input type="password" id="senha" required>
+          <span class="eye" onclick="toggleSenha('senha')">👁</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Confirmar senha</label>
+        <div class="input-wrapper">
+          <input type="password" id="confirmar" required>
+          <span class="eye" onclick="toggleSenha('confirmar')">👁</span>
+        </div>
+      </div>
+
+      <div class="erro" id="erroSenha">As senhas não coincidem</div>
+
+      <div class="termos">
+        <input type="checkbox" required>
+        <label>Aceito os Termos de Uso e Política de Privacidade</label>
+      </div>
+
+      <button type="submit">Criar conta</button>
+
+    </form>
+
+    <div class="opcoes">
+      <a href="login.html">Já tenho conta</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function toggleSenha(id){
+  const campo = document.getElementById(id);
+  campo.type = campo.type === "password" ? "text" : "password";
+}
+
+document.getElementById("cadastroForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const s = senha.value;
+  const c = confirmar.value;
+  const erro = document.getElementById("erroSenha");
+
+  if(s !== c){
+    erro.style.display = "block";
+    return;
+  }
+  erro.style.display = "none";
+  window.location.href = "login.html";
+});
+</script>
+
+</body>
+</html>

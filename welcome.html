@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inscreva-se | OMF</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --roxo:#a241cc;
+  --roxo-escuro:#6c1394;
+  --roxo-neon:#c77bff;
+  --branco:#ffffff;
+}
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+/* FUNDO BRANCO COM DETALHES ROXOS */
+body{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#ffffff;
+  color:#333;
+}
+
+/* FORMAS ROXAS DECORATIVAS IGUAL AO LOGIN */
+.shape{
+  position:fixed;
+  z-index:-5;
+  filter:blur(35px);
+  opacity:.55;
+}
+
+.s1{
+  width:420px;height:420px;
+  background:#caa8ff;
+  top:-120px; left:-60px;
+  border-radius:50%;
+}
+
+.s2{
+  width:380px;height:380px;
+  background:#a241cc;
+  bottom:-110px; right:-80px;
+  border-radius:50%;
+}
+
+.s3{
+  position:fixed;
+  width:100%;
+  height:180px;
+  top:0;
+  left:0;
+  background:linear-gradient(135deg,#f5e3ff,#ffffff);
+  border-bottom-left-radius:50%;
+  border-bottom-right-radius:50%;
+}
+
+/* CAIXA PRINCIPAL */
+.card{
+  width:95%;
+  max-width:450px;
+  padding:40px 35px;
+  border-radius:22px;
+  background:#ffffff;
+  border:1.8px solid rgba(162,65,204,.25);
+  box-shadow:0 15px 40px rgba(0,0,0,.08);
+  animation:nascer .5s ease forwards;
+  text-align:center;
+}
+
+@keyframes nascer{
+  from{ transform:translateY(40px); opacity:0;}
+  to{ transform:translateY(0); opacity:1;}
+}
+
+/* TÍTULO */
+h1{
+  font-size:2.3rem;
+  font-weight:900;
+  color:#6c1394;
+}
+
+.sub{
+  margin-top:6px;
+  font-size:.95rem;
+  color:#555;
+}
+
+/* DIVISOR */
+.linha{
+  width:80%;
+  height:2px;
+  background:linear-gradient(90deg, transparent, #a241cc, transparent);
+  margin:18px auto 25px auto;
+  border-radius:10px;
+}
+
+/* BOTÃO */
+button{
+  padding:13px 36px;
+  border-radius:999px;
+  border:none;
+  cursor:pointer;
+  background:linear-gradient(135deg,#b163ff, #6c1394);
+  color:white;
+  font-size:1.05rem;
+  font-weight:800;
+  letter-spacing:.4px;
+  box-shadow:0 10px 24px rgba(0,0,0,.22);
+  transition:.2s;
+}
+
+button:hover{
+  transform:translateY(-2px) scale(1.01);
+  box-shadow:0 16px 38px rgba(0,0,0,.30);
+}
+
+/* TEXTO PEQUENO */
+p{
+  font-size:0.95rem;
+  color:#555;
+}
+
+/* RESPONSIVO */
+@media(max-width:450px){
+  .card{ padding:30px 22px; }
+  h1{ font-size:2rem; }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- DECORAÇÕES -->
+<div class="s1 shape"></div>
+<div class="s2 shape"></div>
+<div class="s3"></div>
+
+<!-- CONTEÚDO -->
+<div class="card">
+
+  <h1>Inscreva-se</h1>
+  <p class="sub">Olimpíada de Matemática Fibonacci</p>
+
+  <div class="linha"></div>
+
+  <p>Garanta sua participação e receba informações no portal.</p>
+
+  <button onclick="window.location.href='candidato.html'">
+    Começar inscrição
+  </button>
+
+</div>
+
+</body>
+</html>

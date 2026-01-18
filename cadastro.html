@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal Institucional | Instituto Fibonacci</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--primary:#a241cc;
+--secondary:#355070;
+--accent:#9B5DE5;
+--highlight:#FFD166;
+--bg:#f8f7f4;
+--text:#1f2937;
+--hover-shadow:0 20px 35px rgba(0,0,0,0.15);
+--vibrant2:#4D96FF;
+}
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* FADE IN GLOBAL */
+.fade-in{
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeInUp .9s ease forwards;
+}
+
+.fade-delay-1{animation-delay:.2s;}
+.fade-delay-2{animation-delay:.4s;}
+
+@keyframes fadeInUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* SECTION */
+.portal-imf{
+  padding:160px 10% 120px;
+  background:
+    radial-gradient(circle at top, rgba(155,93,229,.08), transparent 45%),
+    var(--bg);
+}
+
+.portal-container{
+  max-width:1100px;
+  margin:auto;
+}
+
+/* HEADER */
+.portal-header{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.portal-header h1{
+  font-size:2.8rem;
+  font-weight:800;
+  color:var(--primary);
+}
+
+.portal-header p{
+  margin-top:14px;
+  font-size:1.15rem;
+  color:#4b5563;
+  max-width:720px;
+  margin-left:auto;
+  margin-right:auto;
+  line-height:1.6;
+}
+
+/* GRID */
+.portal-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+  gap:42px;
+}
+
+/* CARD */
+.portal-card{
+  background:#fff;
+  padding:48px 42px;
+  border-radius:24px;
+  box-shadow:0 12px 28px rgba(0,0,0,.08);
+  position:relative;
+  overflow:hidden;
+  transition:all .35s ease;
+}
+
+.portal-card:hover{
+  transform:translateY(-12px);
+  box-shadow:var(--hover-shadow);
+}
+
+/* faixa superior */
+.portal-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:7px;
+}
+
+.portal-card.educador::before{
+  background:linear-gradient(90deg,var(--accent),var(--primary));
+}
+
+.portal-card.aluno::before{
+  background:linear-gradient(90deg,var(--vibrant2),var(--accent));
+}
+
+/* TEXTOS */
+.portal-card h2{
+  font-size:1.8rem;
+  font-weight:700;
+  margin-bottom:16px;
+  color:var(--primary);
+}
+
+.portal-card p{
+  font-size:1.02rem;
+  line-height:1.75;
+  color:#4b5563;
+  margin-bottom:36px;
+}
+
+/* BOTÕES */
+.portal-actions{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.portal-btn{
+  text-decoration:none;
+  padding:15px;
+  border-radius:40px;
+  font-weight:600;
+  text-align:center;
+  transition:all .35s ease;
+}
+
+.portal-btn.primary{
+  background:linear-gradient(135deg,var(--primary),#4e1a71);
+  color:#fff;
+}
+
+.portal-btn.primary:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--hover-shadow);
+}
+
+.portal-btn.outline{
+  border:2px solid var(--primary);
+  color:var(--primary);
+}
+
+.portal-btn.outline:hover{
+  background:var(--primary);
+  color:#fff;
+}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+  .portal-imf{padding:120px 6%;}
+  .portal-header h1{font-size:2.4rem;}
+}
+
+@media(max-width:600px){
+  .portal-grid{grid-template-columns:1fr;}
+  .portal-card{padding:36px 28px;}
+  .portal-header h1{font-size:2.1rem;}
+}
+</style>
+</head>
+
+<body>
+
+<section class="portal-imf">
+  <div class="portal-container">
+
+    <div class="portal-header fade-in">
+      <h1>Portal Institucional</h1>
+      <p>
+        Acesse o ambiente correspondente ao seu perfil para participar das
+        olimpíadas e projetos acadêmicos do Instituto de Matemática Fibonacci.
+      </p>
+    </div>
+
+    <div class="portal-grid">
+
+      <!-- EDUCADORES -->
+      <div class="portal-card educador fade-in fade-delay-1">
+        <h2>Área do Educador</h2>
+        <p>
+          Espaço exclusivo para professores, coordenadores e instituições
+          responsáveis pela inscrição, acompanhamento e gestão de estudantes.
+        </p>
+
+        <div class="portal-actions">
+          <a href="cadastro_educador.html" class="portal-btn primary">
+            Acessar a plataforma
+          </a>
+          <a href="cadastro_educador.html" class="portal-btn outline">
+            Cadastrar e gerenciar alunos
+          </a>
+        </div>
+      </div>
+
+      <!-- ALUNOS -->
+      <div class="portal-card aluno fade-in fade-delay-2">
+        <h2>Área do Aluno</h2>
+        <p>
+          Ambiente dedicado aos estudantes participantes das olimpíadas e
+          iniciativas educacionais promovidas pelo Instituto Fibonacci.
+        </p>
+
+        <div class="portal-actions">
+          <a href="cadastro_aluno.html" class="portal-btn primary">
+            Acessar minha conta
+          </a>
+          <a href="cadastro_aluno.html" class="portal-btn outline">
+            Inscrever-se em uma competição
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
