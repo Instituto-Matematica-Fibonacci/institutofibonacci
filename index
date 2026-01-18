@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Instituto de Matemática Fibonacci</title>
 
-<link rel="icon" type="image/png" href="../Site IMF/Imagens IMF/circle-cropped.png">
+<link rel="icon" type="image/png" href="circle-cropped.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -222,7 +222,7 @@ border-radius:2px;
       rgba(155,93,229,0.88),
       rgba(253,241,231,0.88)
     ),
-    url("Imagens\ IMF/download.jpg") center / cover no-repeat;
+    url("download.jpg") center / cover no-repeat;
   background-attachment: fixed;
   overflow: hidden;
 }
@@ -573,7 +573,7 @@ section{padding:70px 5%;}
     <header>
         <div class="container header-inner">
           <h1>
-            <img src="../Site IMF/Imagens IMF/circle-cropped.png" alt="Instituto Fibonacci">
+            <img src="circle-cropped.png" alt="Instituto Fibonacci">
             Instituto Fibonacci
           </h1>
       
@@ -595,7 +595,7 @@ section{padding:70px 5%;}
       </header>      
 
       <div class="hero">
-        <img src="../Site IMF/Imagens IMF/circle-cropped.png" alt="Instituto Fibonacci">
+        <img src="circle-cropped.png" alt="Instituto Fibonacci">
         <div class="container">
           <h2>Inspirando o futuro da Educação</h2>
           <p>
